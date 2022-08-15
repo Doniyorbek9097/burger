@@ -1,0 +1,28 @@
+{
+  "files": {
+    "core/bot.js": [
+      {
+        "id": "5dd43a7e-ad5f-4908-bc68-71c118976028",
+        "line": 51,
+        "version": 1370,
+        "index": 1345
+      }
+    ],
+    "index.js": [
+      {
+        "id": "f79152ab-9aef-4e5f-a18d-fbac1319b935",
+        "line": 1,
+        "version": 1,
+        "index": 0
+      }
+    ],
+    "scenes/cart.js": [
+      {
+        "id": "042b534d-98aa-4ef7-8cda-6985108e83ea",
+        "line": 101,
+        "version": 3298,
+        "index": 3547
+      }
+    ]
+  }
+}

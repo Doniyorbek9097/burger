@@ -1,0 +1,119 @@
+{
+    "common": {
+        "keyboard": {
+          "back":"◀️ Orqaga",
+          "home":"🔼 Bosh sahifa",
+          "cancel":"❌ Bekor qilish"
+        }
+    },
+
+    "auth": {
+      "welcome":"Siz botdan foydalanish uchun ro'yxatdan o'tishingiz kerak ❗",
+      "name":"Iltimos ismingizni kiriting 👇",
+      "nameLength":"Iltimos ismingizni eng kamida 3 ta harfdan kop bo'lishi kerak❗",
+      "nameSuccess":"Ro'yhatdan muvaffaqiyatli o'tdingiz ✅",
+      "phone":"Telefon raqamingizni kiriting 👇",
+      "plaseNumber":"Iltimos telefon raqamingizni kiriting ❗",
+      "keyboard": {
+        "phone":"📞 Telefon raqam yuborish"
+      }
+    },
+
+    "main": {
+        "welcome":"Assalomu aleykum 👏\n------------------------------------------\n🍔🌮🫔 <b>KingStarBurgerBot</b>ga  Hush kelibsiz ! \n-------------------------------------------",
+        "keyboard": {
+            "menu": "🍔 Menyu",
+            "cart": "🛒 Savatcha",
+            "settings": "🛠️ Sozlamalar"
+        }
+    },
+
+"menu": {
+"message": "KingStarBurgerBot Siz uchun hizmat qiladi ☝️\n--------------------------------------------\nBizning Menyudan o'zingizga yoqan taomlardan tanlang !",
+     "keyboard":{
+         "home":"🏠Asosiy menyu",
+         "cart":"🛒Korzinka",
+         "addedCart":"Ha",
+         "notAddCart":"Yoq"
+     },
+
+"productPriceMessage":"Narxlari bo'yicha buyurtma berish 👇",
+    
+"productAmount":"Nechta olishingizni kiriting 👇",
+ "addCart":"Savatga qo'shaylikmi ❓",
+ "addedCart":"Bunday mahsulot savatchada mavjud ❗"
+
+},
+
+
+"cart": {
+    "message": {
+        "emptyCart":"Sizda Karzinka mavjud emas!\n Yangi karzinka olish uchun mahsulot olishingiz kerak",
+        "username":"👤Foydalnuvchi",
+        "userPhone":"📞Telefon raqami",
+        "cartAbout":" Karzinkadagi barcha mahsulotlar",
+        "totalPrice":"💰Jami summa"
+    },
+    "keyboard": {
+        "orderPush":"📋Buyurtma berish",
+        "clear":"🗑Tozalash",
+        "menu":"🍔Menyuga qaytish"
+    }
+},
+
+"order":{
+  "message":{
+  "isEmptyCart":"Buyurtma berishingiz uchun Karzinkangizda mahsulotlar bo'lish kerak❗️Iltimos karzinakaga mahsulot soling",
+  "location":"Qayerdansiz 👀 ? Agar bizga lokatisiyangizni 📍 yuborsangiz sizga eng yaqin filialni aniqlaymmiz !",
+  "success":"Buyurtmangiz qabul qilindi ✅🚕 Tez orada siz bilan bog'lanamiz ✅..."
+  },
+  "keyboard":{
+    "location":"📍Lokatsiyani yuborish"
+  }
+},
+
+"adminHome":{
+  "message":"Siz @KingStarBurgerBot adminisiz ! \nMahsulotlaringizni botga joylashingiz mumkin !",
+  "alert":{
+    "isEmptyOrders":"Buyurtmalar mavjud emas! 🙅‍♂️",
+    "isEmptyUsers":"Bot foydanluvchilarni topilmadi🔍"
+  },
+  "keyboard":{
+    "productAdd":"➕ Mahsulot qo'shish",
+    "productDelete":"❌ Mahsulot o'chirish",
+    "orders":"🚕 Buyurtmalar",
+    "users":"👥 Foydalanuvchilar"
+    
+  }
+},
+
+"addProduct":{
+	"productName":"Mahsulot nomini kiriting 👇\n\nMisol: Pizza",
+	"productPrice":"Narxini kiriting 👇\n\nMisol: 15000",
+	"haveProduct":"avvaldan mavjud❗\nYangi narxini kiriting 👇\n\n<i>Misol:</i> <b>15000</b>",
+	"question":"@KingStarBurgerBot menyusiga qo'shaylikmi ?",
+	"keyboard":{
+		"yes":"Ha",
+		"no":"Yoq"
+	}
+	
+},
+
+	
+"adminOrder":{
+	 "name":"Ism",
+	 "username":"👤Foydalnuvchi",
+        "phone":"📞Telefon raqami",
+        "text":"Barcha mahsulotlar",
+        "totalPrice":"💰Jami summa",
+	"keyboard":{
+		"location":"Joylashuv",
+		"delete":"O'chirish",
+		"back":"Orqaga"
+	}
+}
+
+
+
+    
+}

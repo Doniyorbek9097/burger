@@ -1,0 +1,115 @@
+{
+    "common": {
+        "keyboard": {
+          "back":"◀️ Back",
+          "home":"🔼 Home",
+          "cancel":"❌ Cancel"
+        }
+    },
+
+    "auth": {
+      "welcome":"You must register to use the bot ❗",
+      "name":"Please enter your name 👇",
+      "nameLength":"Please make sure your name is at least 3 letters long❗",
+      "nameSuccess":"You have successfully registered ✅",
+      "phone":"Enter your phone number 👇",
+      "plaseNumber":"Please enter your phone number ❗",
+      "keyboard": {
+        "phone":"📞 Send phone number"
+      }
+    },
+
+    "main": {
+        "welcome":"Hello 👏\n------------------------------------------------ -----\n🍔🌮🫔 Welcome to <b>KingStarBurgerBot</b>! \n------------------------------------------",
+        "keyboard": {
+            "menu": "🍔 Menu",
+            "cart": "🛒 Cart",
+            "settings": "🛠️ Settings"
+        }
+    },
+
+    "menu": {
+    "message": "KingStarBurgerBot serves you ☝️\n------------------------------------------ - -------- ------------- -- \n Choose your favorite dishes from our menu !",
+ "keyboard": {
+        "home":"🏠Main menu",
+        "cart":"🛒Cart",
+        "addedCart":"Yes",
+        "notAddCart":"No"
+     },
+
+"productPriceMessage":"Order by price 👇",       
+"productAmount":"Enter how many you will receive 👇",
+ "addCart":"Add to cart ❓",
+ "addedCart":"This product is in the shopping cart ❗"      
+},
+
+"cart": {
+    "message": {
+        "emptyCart":"☹️Your cart is empty",
+        "username":"👤User",
+        "userPhone":"📞Phone number",
+        "cartAbout":"All products in the cart",
+        "totalPrice":"💰Total amount"
+    },
+    "keyboard": {
+        "orderPush":"📋Place an order",
+        "clear":"🗑Clear",
+        "menu":"🍔Back menu"
+    }
+},
+
+"order":{
+  "message":{
+  "isEmptyCart":"You must have items in your cart to place an order❗️Please add your purchases to your cart.",
+  "location":"Where are you from? Send us your address 📍 and we will find the nearest branch!",
+  "success":"Your order has been accepted ✅\n🚕 We will contact you soon ✅..."
+  },
+  "keyboard":{
+    "location":"📍Send location"
+  }
+},
+
+"adminHome":{
+  "message":"You are the admin of @KingStarBurgerBot! \nYou can post your products on the bot!",
+  "keyboard":{
+    "productAdd":"➕ Add product",
+    "productDelete":"❌ Delete product",
+    "orders":"🚕 Orders",
+    "users":"👥 Users"
+    
+  }
+},
+
+"addProduct":{
+	"productName":"Enter the name of the product 👇\n\nExample: Pizza",
+	"haveProduct":"Already available❗\nEnter new price 👇\n\n<i>Example:</i> <b>15000</b>",
+	"productPrice":"Enter the price 👇\n\nExample: 15000",
+	"question":"Join @KingStarBurgerBot menu ?",
+	"keyboard":{
+		"yes":"Yes",
+		"no":"No"
+	}
+	
+},
+
+
+"adminOrder":{
+	 "name":"Name",
+	 "username":"👤Username",
+        "phone":"📞Phone number",
+        "text":"All products",
+        "totalPrice":"💰Total price",
+	"keyboard":{
+		"location":"Location",
+		"delete":"Delete",
+		"back":"Back"
+	}
+}
+
+
+
+
+
+
+    
+}
