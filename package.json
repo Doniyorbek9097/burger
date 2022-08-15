@@ -6,6 +6,9 @@
   "scripts": {
     "start": "nodemon index"
   },
+	"engines": {
+    "node": "16.13.2"
+  },
   "keywords": [],
   "author": "Doniyorbek Ergashev",
   "license": "ISC",
@@ -20,6 +23,6 @@
     "telegraf-ratelimit": "^2.0.0"
   },
   "devDependencies": {
-    "nodemon": "^2.0.19"
+        "nodemon": "^2.0.16"
   }
 }
