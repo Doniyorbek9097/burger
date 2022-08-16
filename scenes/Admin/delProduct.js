@@ -6,18 +6,18 @@ async (ctx) => {
 if(!ctx.callbackQuery) return;
 ctx.replyWithChatAction("typing");
 ctx.deleteMessage().catch(()=>{});
-const txt = `O'chirmoqchi bo'lgan mahsulotingizni tanlang!`;
+
   const products = await axios.get("/category");
     let buttons = products.data.categories.map(button => Markup.button.callback(`❌${button.title}`, button._id));
     let buttonArr = [];
-    for(i=0; i < products.data.categories.length; i++){buttonArr.push(buttons.splice(0,5))}
+    for(i=0; i < products.data.categories.length; i++){buttonArr.push(buttons.splice(0,2))}
 
     let keyboard = Markup.inlineKeyboard([
         ...buttonArr,
 			[Markup.button.callback("🔙Orqaga","adminHome")]
     ]);
 
-await	ctx.replyWithHTML(txt,keyboard);
+await	ctx.replyWithHTML(ctx.i18n.t("delProduct.message"),keyboard);
 
 return ctx.wizard.next();
 	
@@ -34,7 +34,7 @@ const id = ctx.callbackQuery.data;
 	if(Product.data.status !== 200) return ctx.scene.enter("adminHome");
 	const productIds = Product.data.products.map(product => product._id);
 	productIds.map(async productId => await axios.delete("/product/"+productId))
-ctx.answerCbQuery( "Mahsulot o'chirildi✅",{show_alert:true});
+ctx.answerCbQuery( `${ctx.i18n.t("delProduct.alert")}✅`,{show_alert:true});
 return ctx.scene.reenter();
 
 }

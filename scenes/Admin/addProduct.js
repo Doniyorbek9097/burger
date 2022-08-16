@@ -45,8 +45,8 @@ ctx.telegram.deleteMessage(ctx.chat.id, ctx.message.message_id).catch(()=>{});
 if(ctx.callbackQuery) return;
 ctx.wizard.state.product.price = ctx.message.text;
 const keyboard = Markup.inlineKeyboard([
-	Markup.button.callback(ctx.i18n.t("addProduct.keyboard.yes"),"add"),
-	Markup.button.callback(ctx.i18n.t("addProduct.keyboard.no"),"not")
+	Markup.button.callback(ctx.i18n.t("addProduct.keyboard.yes"),"yes"),
+	Markup.button.callback(ctx.i18n.t("addProduct.keyboard.no"),"no")
 ])
 ctx.reply(ctx.i18n.t("addProduct.question"),keyboard)
 	
@@ -57,15 +57,15 @@ ctx.reply(ctx.i18n.t("addProduct.question"),keyboard)
 
 addProduct.command("start", ctx => ctx.scene.enter("adminHome"))
 
-addProduct.action("add", async ctx => {
+addProduct.action("yes", async ctx => {
 	ctx.replyWithChatAction("typing");
   ctx.deleteMessage().catch(()=>{});
 const {product} = ctx.wizard.state;
 const newProduct = await axios.post("/product",product)
-await ctx.answerCbQuery("Mahsulot menyuga kiritildi ✅",{show_alert:true});
+await ctx.answerCbQuery(ctx.i18n.t("addProduct.addedProduct"),{show_alert:true});
  return ctx.scene.enter("adminHome");
 })
 
-addProduct.action("not", ctx => ctx.scene.enter("adminHome"))
+addProduct.action("no", ctx => ctx.scene.enter("adminHome"))
 
 module.exports = addProduct;

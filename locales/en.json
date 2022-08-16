@@ -28,7 +28,7 @@
         }
     },
 
-    "menu": {
+"menu": {
     "message": "KingStarBurgerBot serves you ☝️\n------------------------------------------ - -------- ------------- -- \n Choose your favorite dishes from our menu !",
  "keyboard": {
         "home":"🏠Main menu",
@@ -39,13 +39,17 @@
 
 "productPriceMessage":"Order by price 👇",       
 "productAmount":"Enter how many you will receive 👇",
- "addCart":"Add to cart ❓",
- "addedCart":"This product is in the shopping cart ❗"      
+"pleaseKeyboard":"Please use the keys ❌",
+"addCart":"Add to cart ❓",
+"cartAddProduct":"Product has been added to cart❗",
+"cartAddedProduct":"Product updated to cart❗"
 },
 
 "cart": {
     "message": {
         "emptyCart":"☹️Your cart is empty",
+			  "deleteProduct":"The product has been deleted from the cart ❗",
+			  "clearCart":"Cart cleared 🗑",
         "username":"👤User",
         "userPhone":"📞Phone number",
         "cartAbout":"All products in the cart",
@@ -62,6 +66,7 @@
   "message":{
   "isEmptyCart":"You must have items in your cart to place an order❗️Please add your purchases to your cart.",
   "location":"Where are you from? Send us your address 📍 and we will find the nearest branch!",
+	"waiting":"Your order is being processed...",
   "success":"Your order has been accepted ✅\n🚕 We will contact you soon ✅..."
   },
   "keyboard":{
@@ -71,6 +76,10 @@
 
 "adminHome":{
   "message":"You are the admin of @KingStarBurgerBot! \nYou can post your products on the bot!",
+	"alert":{
+     "isEmptyOrders":"No orders available! 🙅‍♂️",
+     "isEmptyUsers":"No bot users found🔍"
+   },
   "keyboard":{
     "productAdd":"➕ Add product",
     "productDelete":"❌ Delete product",
@@ -84,6 +93,7 @@
 	"productName":"Enter the name of the product 👇\n\nExample: Pizza",
 	"haveProduct":"Already available❗\nEnter new price 👇\n\n<i>Example:</i> <b>15000</b>",
 	"productPrice":"Enter the price 👇\n\nExample: 15000",
+	"addedProduct":"The product has been added to the menu ✅",
 	"question":"Join @KingStarBurgerBot menu ?",
 	"keyboard":{
 		"yes":"Yes",
@@ -104,6 +114,16 @@
 		"delete":"Delete",
 		"back":"Back"
 	}
+},
+
+
+"usersList":{
+"users": "👥 Total Users",
+"user":"👤 Username",
+"username":"👤 Username",
+"undefined": "Undefined",
+"phone":"📞 Phone"
+
 }
 
 

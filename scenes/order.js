@@ -35,7 +35,7 @@ orderScene.on("location",async(ctx)=>{
 await  ctx.replyWithChatAction("typing");
 ctx.telegram.deleteMessage(ctx.chat.id, ctx.message.message_id-1).catch(()=>{});
 ctx.telegram.deleteMessage(ctx.chat.id, ctx.message.message_id).catch(()=>{});
-  await ctx.reply("Buyurtmangiz qabul qilinmoqda...",{reply_markup: { remove_keyboard: true }})
+  await ctx.reply(ctx.i18n.t("order.message.waiting"),{reply_markup: { remove_keyboard: true }})
     const user = await axios.get("/users/" + ctx.from.id);
     const myCart = await axios.get("/cart/" + user.data.user._id);
     const order = await axios.post("/order", {
@@ -45,6 +45,7 @@ ctx.telegram.deleteMessage(ctx.chat.id, ctx.message.message_id).catch(()=>{});
 
 
     if (order.data.status === 201) {
+ctx.telegram.deleteMessage(ctx.chat.id, ctx.message.message_id-1).catch(()=>{});
       const admins = await axios.get("/users/admin");
        if(admins.data.users.lenth !== 0){
         const txt = `<i>Sizda <b>${ctx.from.username ? `@${ctx.from.username}`:ctx.from.first_name}</b> yangi buyutmachi bor❗🍔</i>`
@@ -75,7 +76,6 @@ ctx.telegram.deleteMessage(ctx.chat.id, ctx.message.message_id).catch(()=>{});
 
 orderScene.use((ctx,next) => {ctx.deleteMessage().catch(()=>{}); next()})
 orderScene.action("menu",async(ctx)=>{
-	ctx.telegram.deleteMessage(ctx.chat.id, ctx.message.message_id).catch(()=>{});
 return ctx.scene.enter("start");
 })
 	

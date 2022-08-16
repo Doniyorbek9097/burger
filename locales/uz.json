@@ -40,8 +40,10 @@
 "productPriceMessage":"Narxlari bo'yicha buyurtma berish 👇",
     
 "productAmount":"Nechta olishingizni kiriting 👇",
+ "pleaseKeyboard":"Iltimos tugmalardan foydalaning ❌",
  "addCart":"Savatga qo'shaylikmi ❓",
- "addedCart":"Bunday mahsulot savatchada mavjud ❗"
+ "cartAddProduct":"Mahsulot Karzinkaga saqlandi❗",
+ "cartAddedProduct":"Mahsulot Karzinkaga yangilandi❗"
 
 },
 
@@ -49,6 +51,8 @@
 "cart": {
     "message": {
         "emptyCart":"Sizda Karzinka mavjud emas!\n Yangi karzinka olish uchun mahsulot olishingiz kerak",
+			  "deleteProduct":"Mahsulot karzinkadan o'chirildi ❗",
+			  "clearCart":"Karzinka tozalandi 🗑",
         "username":"👤Foydalnuvchi",
         "userPhone":"📞Telefon raqami",
         "cartAbout":" Karzinkadagi barcha mahsulotlar",
@@ -65,12 +69,14 @@
   "message":{
   "isEmptyCart":"Buyurtma berishingiz uchun Karzinkangizda mahsulotlar bo'lish kerak❗️Iltimos karzinakaga mahsulot soling",
   "location":"Qayerdansiz 👀 ? Agar bizga lokatisiyangizni 📍 yuborsangiz sizga eng yaqin filialni aniqlaymmiz !",
+	"waiting":"Buyurtmangiz qabul qilinmoqda...",
   "success":"Buyurtmangiz qabul qilindi ✅🚕 Tez orada siz bilan bog'lanamiz ✅..."
   },
   "keyboard":{
     "location":"📍Lokatsiyani yuborish"
   }
 },
+
 
 "adminHome":{
   "message":"Siz @KingStarBurgerBot adminisiz ! \nMahsulotlaringizni botga joylashingiz mumkin !",
@@ -91,6 +97,7 @@
 	"productName":"Mahsulot nomini kiriting 👇\n\nMisol: Pizza",
 	"productPrice":"Narxini kiriting 👇\n\nMisol: 15000",
 	"haveProduct":"avvaldan mavjud❗\nYangi narxini kiriting 👇\n\n<i>Misol:</i> <b>15000</b>",
+	"addedProduct":"Mahsulot menyuga kiritildi ✅",
 	"question":"@KingStarBurgerBot menyusiga qo'shaylikmi ?",
 	"keyboard":{
 		"yes":"Ha",
@@ -99,6 +106,11 @@
 	
 },
 
+"delProduct":{
+	"message":"O'chirmoqchi bo'lgan mahsulotingizni tanlang!",
+	"alert":"Mahsulot o'chirildi ✅"
+
+},
 	
 "adminOrder":{
 	 "name":"Ism",
@@ -111,6 +123,14 @@
 		"delete":"O'chirish",
 		"back":"Orqaga"
 	}
+},
+
+"usersList":{
+	"users":"👥 Jami foydalanuvchilar",
+	"user":"👤 Foydalanuvchi ismi",
+	"username":"👤 Foydalanuvchi nomi",
+	"undefined":"Aniqlanmgan",
+	"phone":"📞 Telifon"	
 }
 
 

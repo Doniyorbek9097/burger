@@ -46,8 +46,7 @@ const userdata = await axios.post("/users", user);
 if (userdata.data.status === 201) {
 ctx.replyWithChatAction("typing");
 ctx.telegram.deleteMessage(ctx.chat.id, ctx.message.message_id).catch(()=>{});
-  await ctx.reply(ctx.i18n.t("auth.nameSuccess"));
- ctx.session.user = user;
+await ctx.reply(ctx.i18n.t("auth.nameSuccess"),{reply_markup: { remove_keyboard: true }});
 return ctx.scene.enter("start") 
 
 }  

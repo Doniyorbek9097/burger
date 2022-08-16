@@ -70,7 +70,7 @@ if(!ctx.callbackQuery) return;
 
     if (cartProductId.includes(productID)) {
         ctx.deleteMessage().catch(()=>{}); 
-        await ctx.answerCbQuery("Mahsulot karzinkadan o'chirildi ❗️",{show_alert:true});
+        await ctx.answerCbQuery(ctx.i18n.t("cart.message.deleteProduct"),{show_alert:true});
         const delProduct = await axios.get(`/cart/delete-product/${user.data.user._id}/${productID}`);
         if (delProduct.data.status === 200) return ctx.scene.reenter();
     }
@@ -91,7 +91,7 @@ await ctx.replyWithChatAction("typing");
 ctx.deleteMessage().catch(()=>{});
 if(!ctx.callbackQuery) return;  
 	const user = await axios.get("/users/"+ctx.from.id);
-await ctx.answerCbQuery("Karzinka tozalandi 🗑",{show_alert:true});
+await ctx.answerCbQuery(ctx.i18n.t("cart.message.clearCart"),{show_alert:true});
         const clear = await axios.get(`/cart/clear-product/${user.data.user._id}`);
         if (clear.data.status === 200) return ctx.scene.enter("start");
 

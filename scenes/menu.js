@@ -37,7 +37,7 @@ const productName = ctx.callbackQuery.data;
 let productsNames = await axios.get("/product");
   productsNames = productsNames.data.products.map(product => product.name);
   if(!productsNames.includes(productName)) {
-  ctx.answerCbQuery( "Bunday mahsulot mavjud emas ❌",{show_alert:true});
+  ctx.answerCbQuery(ctx.i18n.t("menu.pleaseKeyboard"),{show_alert:true});
     return;
   }
   
@@ -67,7 +67,7 @@ if(!ctx.callbackQuery) return;
 let product = await axios.get("/product/"+ctx.wizard.state.products.name+"/"+productPrice);
 let productPrices = product.data.products.map(product => product.price);
 if(!productPrices.includes(productPrice)) {
-ctx.answerCbQuery("Iltimos tugmalardan foydalaning ❗",{show_alert:true});
+ctx.answerCbQuery("menu.pleaseKeyboard",{show_alert:true});
 return;  
 }
   
@@ -93,10 +93,10 @@ return;
 async (ctx) => {
 await ctx.replyWithChatAction("typing");
 if(!ctx.callbackQuery) return;
-const productAmount = ctx.callbackQuery.data;
-  
-  if(isNaN(productAmount)) {
-ctx.answerCbQuery( "Iltimos raqamlarda kiriting ❌",{show_alert:true});
+const productAmount = parseInt(ctx.callbackQuery.data);
+    const countes = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 15, 20, 25, 30, 50];
+  if(!countes.includes(productAmount)) {
+ctx.answerCbQuery(ctx.i18n.t("menu.pleaseKeyboard") ,{show_alert:true});
 return;  
 }
 
@@ -121,7 +121,10 @@ return ctx.scene.enter("start");
 });
 menuScene.action("cart", ctx => ctx.scene.enter("cartScene"))
 
-menuScene.action("back", ctx => ctx.scene.enter("start"))
+menuScene.action("back", ctx => {
+	ctx.deleteMessage().catch(()=>{});
+	return ctx.scene.enter("start");
+})
 
 
                               
@@ -142,10 +145,11 @@ menuScene.action("yes", async ctx => {
             user:user.data.user._id,
             products:ctx.session.products
         })
-        
-        await ctx.answerCbQuery(myCart.data.message +" ✅",{show_alert:true});
-
-      
+        const msg = myCart.data.message == "Mahsulot Karzinkaga saqlandi" 
+					? ctx.i18n.t("menu.cartAddProduct")
+					: ctx.i18n.t("menu.cartAddedProduct");
+        await ctx.answerCbQuery(msg,{show_alert:true});
+ 
   return ctx.scene.enter("cartScene");
   
 })

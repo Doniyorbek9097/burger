@@ -65,7 +65,7 @@ const ordersId = orders.data.orders.map(order => order._id);
 	if(ordersId.includes(data)){
 	const delOrder = await axios.delete("/order/"+data);
 		ctx.answerCbQuery("Buyurtma o'childi!",{show_alert:true});
-		return ctx.scene.enter("adminHome");
+		return;
 	}
 
  // get location
@@ -82,7 +82,7 @@ function isJSON(data) {
 if(isJSON(data)){
 	const { latitude, longitude } = JSON.parse(data);
  ctx.telegram.sendLocation(ctx.chat.id,latitude,longitude); 
-	return ctx.scene.enter("adminHome");
+	return;
 
 }else{
 	return;
