@@ -22,6 +22,4 @@ startScene.action("cart", ctx => ctx.scene.enter("cartScene"))
 
 
 
-
-
 module.exports = startScene;

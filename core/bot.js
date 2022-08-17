@@ -42,11 +42,24 @@ bot.start(async (ctx) => {
 });
 
 
-
 bot.action("adminOrders",(ctx) => {
   ctx.deleteMessage().catch(()=>{});
  return ctx.scene.enter("adminOrders")
 })
 
+
+bot.command("/help",async ctx => {
+  ctx.deleteMessage().catch(()=>{});	
+await ctx.replyWithHTML(ctx.i18n.t("common.message.help"), {
+	...Markup.inlineKeyboard([
+		Markup.button.callback(ctx.i18n.t("common.keyboard.back"),"menu")
+	])
+})
+})
+
+bot.action("menu", ctx => {
+  ctx.deleteMessage().catch(()=>{});	
+	return ctx.scene.enter("start")
+})
 
 bot.launch();

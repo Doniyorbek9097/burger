@@ -1,5 +1,8 @@
 {
     "common": {
+			"message":{
+				"help":"@KingStarBurgerbot\n\n позволяет размещать онлайн-заказы!\n\n Создатель бота: @Doniyorbek_Ergashev "
+			},
         "keyboard": {
           "back":"◀️ Back",
           "home":"🔼 Home",
@@ -106,9 +109,10 @@
 "adminOrder":{
 	 "name":"Name",
 	 "username":"👤Username",
-        "phone":"📞Phone number",
-        "text":"All products",
-        "totalPrice":"💰Total price",
+    "phone":"📞Phone number",
+    "text":"All products",
+    "totalPrice":"💰Total price",
+		"alertDelete":"Order deleted",
 	"keyboard":{
 		"location":"Location",
 		"delete":"Delete",

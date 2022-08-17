@@ -21,7 +21,7 @@ ${ctx.i18n.t("usersList.phone")}: ${users[ctx.wizard.state.count].phone}\n
 const keyboard = Markup.inlineKeyboard([
 	Markup.button.callback("◀️","back"),
 	Markup.button.callback("➡️","next"),
-	Markup.button.callback(`🔙 ${ctx.i18n.t("common.keyboard.back")}` ,"adminHome")	
+	Markup.button.callback(`${ctx.i18n.t("common.keyboard.back")}` ,"adminHome")	
 ],{columns:2})
 		
 await	ctx.reply(txt,keyboard);
@@ -43,7 +43,6 @@ ctx.wizard.state.count++;
 
 if(ctx.wizard.state.count > users.length-1) {
 ctx.wizard.state.count = 0;
-	ctx.answerCbQuery("not found",{show_alert:true});
 }
 	
 const txt = `${ctx.i18n.t("usersList.users")}: ${ctx.wizard.state.count+1}/${users.length}\n
@@ -57,8 +56,7 @@ ${ctx.i18n.t("usersList.phone")}: ${users[ctx.wizard.state.count].phone}\n
 const keyboard = Markup.inlineKeyboard([
 	Markup.button.callback("◀️","back"),
 	Markup.button.callback("➡️","next"),
-	Markup.button.callback("🔙 Orqaga","adminHome")
-	
+	Markup.button.callback(`${ctx.i18n.t("common.keyboard.back")}` ,"adminHome")	
 	
 ],{columns:2})
 		
@@ -82,7 +80,6 @@ ctx.wizard.state.count--;
 
 if(ctx.wizard.state.count < 0) {
 ctx.wizard.state.count = users.length-1;
-	ctx.answerCbQuery("not found",{show_alert:true});
 }
 
 const txt = `${ctx.i18n.t("usersList.users")}: ${ctx.wizard.state.count+1}/${users.length}\n
@@ -96,7 +93,7 @@ ${ctx.i18n.t("usersList.phone")}: ${users[ctx.wizard.state.count].phone}\n
 const keyboard = Markup.inlineKeyboard([
 	Markup.button.callback("◀️","back"),
 	Markup.button.callback("➡️","next"),
-	Markup.button.callback("🔙 Orqaga","adminHome")
+	Markup.button.callback(`${ctx.i18n.t("common.keyboard.back")}` ,"adminHome")	
 	
 ],{columns:2})
 		

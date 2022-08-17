@@ -1,5 +1,8 @@
 {
     "common": {
+			 "message":{
+				 "help":"@KingStarBurgerbot\n\n online buyurtmalar berishga imkon beradi!\n\n Bot yaratuvchisi: @Doniyorbek_Ergashev "
+			 },
         "keyboard": {
           "back":"◀️ Orqaga",
           "home":"🔼 Bosh sahifa",
@@ -115,9 +118,10 @@
 "adminOrder":{
 	 "name":"Ism",
 	 "username":"👤Foydalnuvchi",
-        "phone":"📞Telefon raqami",
-        "text":"Barcha mahsulotlar",
-        "totalPrice":"💰Jami summa",
+    "phone":"📞Telefon raqami",
+    "text":"Barcha mahsulotlar",
+    "totalPrice":"💰Jami summa",
+	  "alertDelete":"Buyurtma o'chirildi",    
 	"keyboard":{
 		"location":"Joylashuv",
 		"delete":"O'chirish",

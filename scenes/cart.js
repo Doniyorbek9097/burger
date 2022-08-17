@@ -25,7 +25,7 @@ if(!ctx.callbackQuery) return;
         })
     }
     
-    let text = `<i>${ctx.i18n.t("cart.message.username")}: <b>${cart.user.first_name}</b></i>
+let text = `<i>${ctx.i18n.t("cart.message.username")}: <b>${cart.user.first_name}</b></i>
 
 <i>${ctx.i18n.t("cart.message.userPhone")}: <b>${cart.user.phone}</b>
 ——————————————————

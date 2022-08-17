@@ -6,7 +6,11 @@ const addProduct = new Scenes.WizardScene(
 ctx.replyWithChatAction("typing");
 ctx.deleteMessage().catch(()=>{});
 const txt = `${ctx.i18n.t("addProduct.productName")}`;
-   await ctx.replyWithHTML(txt);
+   await ctx.replyWithHTML(txt,{
+		 ...Markup.inlineKeyboard([
+			 Markup.button.callback(ctx.i18n.t("common.keyboard.back"),"back")
+		 ])
+	 });
     return ctx.wizard.next();
   },
 
@@ -24,7 +28,11 @@ if(category.data.status == 200){
 ctx.replyWithChatAction("typing");
 ctx.telegram.deleteMessage(ctx.chat.id, ctx.message.message_id-1).catch(()=>{});
 const txt = `<b>${title}</b> ${ctx.i18n.t("addProduct.haveProduct")}`;
-	ctx.replyWithHTML(txt);
+	ctx.replyWithHTML(txt,{
+		...Markup.inlineKeyboard([
+			 Markup.button.callback(ctx.i18n.t("common.keyboard.back"),"back")
+		 ])
+	});
 	return ctx.wizard.next();
 }
 
@@ -33,7 +41,11 @@ ctx.replyWithChatAction("typing");
 ctx.telegram.deleteMessage(ctx.chat.id, ctx.message.message_id-1).catch(()=>{});
 ctx.telegram.deleteMessage(ctx.chat.id, ctx.message.message_id).catch(()=>{});
 const txt = `<b>${title}</b> ${ctx.i18n.t("addProduct.productPrice")}`;
-	ctx.replyWithHTML(txt);
+	ctx.replyWithHTML(txt,{
+		...Markup.inlineKeyboard([
+			 Markup.button.callback(ctx.i18n.t("common.keyboard.back"),"back")
+		 ])
+	});
 	return ctx.wizard.next();
 }
 	
@@ -67,5 +79,11 @@ await ctx.answerCbQuery(ctx.i18n.t("addProduct.addedProduct"),{show_alert:true})
 })
 
 addProduct.action("no", ctx => ctx.scene.enter("adminHome"))
+
+addProduct.action("back", ctx => {
+ctx.deleteMessage().catch(()=>{});
+return ctx.scene.enter("adminHome");
+})
+
 
 module.exports = addProduct;
