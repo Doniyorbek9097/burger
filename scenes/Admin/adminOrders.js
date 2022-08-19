@@ -10,47 +10,46 @@ if(!ctx.callbackQuery) return;
  let orders = await axios.get("/order");
 	
 orders = orders.data.orders;
-let txt = "";
-let keyboard;
+
 orders.map((item,index) => {
-txt += `
+let keyboard;
+let txt = `
 <b>${ctx.i18n.t("adminOrder.name")}</b>: ${item.cart.user.first_name}\n
-<b>${ctx.i18n.t("adminOrder.username")}</b>: ${item.cart.username}\n
+<b>${ctx.i18n.t("adminOrder.username")}</b>: ${item.cart.username==="undefined"?item.cart.username:"Aniqlanmagan"}\n
 <b>${ctx.i18n.t("adminOrder.phone")}</b>: ${item.cart.user.phone}\n
 --------------------------------------
       <i>${ctx.i18n.t("adminOrder.text")}</i>
 --------------------------------------
  `;
 
+
+
+
 item.cart.products.map((product,index) => {
 txt +=`<b>${product.name}</b> ${product.quantity} x ${product.price} = ${product.quantity * parseInt(product.price)}\n
 `;
 
-
 const {latitude, longitude} = item.location;
 	
-keyboard = Markup.inlineKeyboard([
+	keyboard = Markup.inlineKeyboard([
 	Markup.button.callback(`📍${ctx.i18n.t("adminOrder.keyboard.location")}`,JSON.stringify({latitude,longitude})),
 	Markup.button.callback(`❌ ${ctx.i18n.t("adminOrder.keyboard.delete")}`,item._id),
 	Markup.button.callback(`🔙 ${ctx.i18n.t("adminOrder.keyboard.back")}`,"adminHome")
 	
 ],{columns:2});
 
-
-	
-})
-
- const totalPrice = item.cart.products.reduce((sum, {price, quantity}) => sum + parseInt(price) * parseInt(quantity) ,0);
-txt += `------------------------------------------
-<i><b>${ctx.i18n.t("adminOrder.totalPrice")}:</b> ${totalPrice} .so'm</i> 💰
----------------------------------------------------`;
-
-	ctx.replyWithHTML(txt,keyboard);
-	
 });
 
-return ctx.wizard.next();
+	const totalPrice = item.cart.products.reduce((sum, {price, quantity}) => sum + parseInt(price) * parseInt(quantity) ,0);
+txt += `------------------------------------------
+<i><b>${ctx.i18n.t("adminOrder.totalPrice")}:</b> ${totalPrice} .so'm</i> 💰
+---------------------------------------------------`;	
+ctx.replyWithHTML(txt,keyboard);	
 
+});
+
+	return ctx.wizard.next();
+	
 },
 
 async (ctx) => {
@@ -58,7 +57,6 @@ ctx.replyWithChatAction("typing");
 ctx.deleteMessage().catch(()=>{}); 
 if(!ctx.callbackQuery) return;
 const data = ctx.callbackQuery.data;
-
 const orders = await axios.get("/order");
 const ordersId = orders.data.orders.map(order => order._id);
 
